@@ -49,6 +49,7 @@ public class CuentaController {
 
     @PostMapping("/transferir")
     public ResponseEntity<?> transferir(@RequestBody TransferirDTO dto) {
+      //  Exception exception=new DineroInsuficienteException("Dinero Insuficiente");
         Map<String, Object> response = new HashMap<>();
         response.put("date", LocalDate.now().toString());
         response.put("transaccion", dto);
@@ -57,7 +58,7 @@ public class CuentaController {
 
             response.put("date", LocalDate.now().toString());
             response.put("status", "OK");
-            response.put("message", "transferir realizada con exito");
+            response.put("message", "transferencia realizada con exito");
             response.put("transaccion", dto);
 
             return ResponseEntity.ok(response);

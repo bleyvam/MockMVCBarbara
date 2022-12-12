@@ -25,6 +25,7 @@ public class Cuenta implements Serializable {
 
     public void retirar(BigDecimal monto){
       BigDecimal nuevoSaldo=this.saldo.subtract(monto);
+
       if(nuevoSaldo.compareTo(BigDecimal.ZERO)<0){
           throw new DineroInsuficienteException("Dinero Insuficiente");
 
@@ -33,6 +34,7 @@ public class Cuenta implements Serializable {
     }
 
     public void depositar(BigDecimal monto){
+
         this.saldo=saldo.add(monto);
     }
 
